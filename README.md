@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # File Organizer Pro
 
 **File Organizer Pro** is a modern, AI-enhanced desktop application designed to declutter your digital life. It automatically classifies and organizes files into a logical hierarchy using a combination of deterministic rules and semantic AI analysis.
@@ -75,3 +76,7 @@ The application includes a lightweight update checker. Go to the **About** tab a
 *   `ai_service.py`: Handles communication with OpenAI.
 *   `ai_optimizer.py`: Logic for space auditing and structure inference.
 *   `build.py`: Script to compile the application.
+=======
+# file-organiser
+this app tracks your files and weekly organizes them into folders it is my first project with room for improvement especially adding on AI.
+>>>>>>> 6e8bc6d9104d541c807c758c9aacebc87babc3e3

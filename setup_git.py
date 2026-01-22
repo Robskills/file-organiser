@@ -113,9 +113,13 @@ def main():
             print("Merge successful. Pushing again...")
             run_git_command(['push', '-u', 'origin', 'main'])
         else:
-            print("\nAutomatic merge failed. You may need to resolve conflicts manually.")
-            print("To force overwrite the remote (WARNING: deletes remote content), run:")
-            print(f'  "{GIT_CMD}" push -f origin main')
+            print("\nAutomatic merge failed.")
+            choice = input("Do you want to FORCE push? This will overwrite the remote repository (y/n): ").lower()
+            if choice == 'y':
+                print("Force pushing...")
+                run_git_command(['push', '-f', 'origin', 'main'])
+            else:
+                print("Push aborted. Please resolve conflicts manually.")
 
 if __name__ == "__main__":
     main()
