@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.log
+.trash/
+dist/
+build/
+*.spec
+.vscode/
+.idea/
+venv/
+env/
+*.exe
+*.iss
