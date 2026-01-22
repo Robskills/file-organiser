@@ -104,7 +104,18 @@ def main():
 
     # 5. Push
     print("\nPushing to GitHub...")
-    run_git_command(['push', '-u', 'origin', 'main'])
+    if not run_git_command(['push', '-u', 'origin', 'main']):
+        print("\nPush failed. The remote repository is not empty (e.g., contains a README).")
+        print("Attempting to pull and merge remote changes...")
+        
+        # Try to pull with unrelated histories (since local and remote were init'd separately)
+        if run_git_command(['pull', 'origin', 'main', '--allow-unrelated-histories']):
+            print("Merge successful. Pushing again...")
+            run_git_command(['push', '-u', 'origin', 'main'])
+        else:
+            print("\nAutomatic merge failed. You may need to resolve conflicts manually.")
+            print("To force overwrite the remote (WARNING: deletes remote content), run:")
+            print(f'  "{GIT_CMD}" push -f origin main')
 
 if __name__ == "__main__":
     main()
